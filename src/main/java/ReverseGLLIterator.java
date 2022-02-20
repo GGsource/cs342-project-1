@@ -5,7 +5,6 @@ You will create another class ReverseGLLIterator (in its own file) which will
 be identical to the GLLIterator class except that the hasNext() and next()
 methods will have logic to iterate from the list in reverse (tail to head).
 */
-//FIXME: student headers for these files
 public class ReverseGLLIterator<E> implements Iterator<E> {
     GenericList<E>.Node<E> curNode; //copy of original list, will be destroyed to make reversedList
     GenericStack<E> reversedList = null; //Using a stack we ensure it is reversed as its built

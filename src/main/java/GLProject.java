@@ -1,3 +1,18 @@
+/////////////////////////////////////////////////////////////////////////////
+//Name: Geo Gonzalez
+//NetID: ggonza55
+//UIC Email: ggonza55@uic.edu
+/////////////////////////////////////////////////////////////////////////////
+//CS342 Project #1: Generic Lists in Java -
+//For this project we implement custom implementations of a Stack and a Queue
+//using linked lists. Each must also implement Iterator functionality, for a
+//normal iterator, a list iterator, and a reverse iterator. Included are also
+//Test files for each method and constructor involved in the Queue and Stack. 
+/////////////////////////////////////////////////////////////////////////////
+//UIN: 657437605
+//Due Feb 20th, 2022
+/////////////////////////////////////////////////////////////////////////////
+
 // import java.util.ArrayList;
 // import java.util.Iterator;
 
