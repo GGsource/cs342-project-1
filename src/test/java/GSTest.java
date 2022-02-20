@@ -219,4 +219,54 @@ public class GSTest {
         //Next for head should be belgium
         assertEquals(21.0, testStack.getHead().next.data);
     }
+
+    ///////////////////////////////////////////////
+    //BONUS: GenericList Methods Tests for Queue//
+    //////////////////////////////////////////////
+    //DONE: DumpList Test
+    @Test
+    void dumpListGLTest() {
+        testStack.dumpList();
+        assertEquals(0, testStack.getLength());
+    }
+    //DONE: Get Test
+    @Test
+    void getGLTest() {
+        Double item = testStack.get(1);
+        assertEquals(21.0, item);
+    }
+    //DONE: Set Return Value Test
+    @Test
+    void setReturnGLTest() {
+        //Set should return the old value
+        assertEquals(21.0, testStack.set(1, 99.9));
+    }
+    //DONE: Set New Value Test
+    @Test
+    void setNewGLTest() {
+        testStack.set(1, 99.9);
+        Double item = testStack.get(1);
+        assertEquals(99.9, item);
+    }
+    //DONE: SetLength Test
+    @Test
+    void setLengthTest() {
+        testStack.setLength(500);
+        assertEquals(500, testStack.getLength());
+    }
+    //DONE: GetHead Test
+    @Test
+    void getHeadTest() {
+        testStack = new GenericStack<>(2.25);
+        assertEquals(2.25, testStack.getHead().data); //Assert data is same
+    }
+    //DONE: SetHead Test
+    @Test
+    void setHeadTest() {
+        GenericList<Double>.Node<Double> oldHead = testStack.getHead();
+        GenericList<Double>.Node<Double> replacementHead = testStack. new Node<>(96.3);
+        testStack.setHead(replacementHead);
+        assertNotEquals(oldHead, replacementHead); //Assert head node is no longer same
+        assertEquals(96.3, testStack.getHead().data); //Assert data is updated
+    }
 }

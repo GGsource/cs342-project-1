@@ -219,4 +219,54 @@ public class GQTest {
         //Next for head should be belgium
         assertEquals("Belgium", testQueue.getHead().next.data);
     }
+
+    ///////////////////////////////////////////////
+    //BONUS: GenericList Methods Tests for Queue//
+    //////////////////////////////////////////////
+    //DONE: DumpList Test
+    @Test
+    void dumpListGLTest() {
+        testQueue.dumpList();
+        assertEquals(0, testQueue.getLength());
+    }
+    //DONE: Get Test
+    @Test
+    void getGLTest() {
+        String item = testQueue.get(1);
+        assertEquals("Belgium", item);
+    }
+    //DONE: Set Return Value Test
+    @Test
+    void setReturnGLTest() {
+        //Set should return the old value
+        assertEquals("Belgium", testQueue.set(1, "Barbatos"));
+    }
+    //DONE: Set New Value Test
+    @Test
+    void setNewGLTest() {
+        testQueue.set(1, "Barbatos");
+        String item = testQueue.get(1);
+        assertEquals("Barbatos", item);
+    }
+    //DONE: SetLength Test
+    @Test
+    void setLengthTest() {
+        testQueue.setLength(500);
+        assertEquals(500, testQueue.getLength());
+    }
+    //DONE: GetHead Test
+    @Test
+    void getHeadTest() {
+        testQueue = new GenericQueue<>("Atlantis");
+        assertEquals("Atlantis", testQueue.getHead().data); //Assert data is same
+    }
+    //DONE: SetHead Test
+    @Test
+    void setHeadTest() {
+        GenericList<String>.Node<String> oldHead = testQueue.getHead();
+        GenericList<String>.Node<String> replacementHead = testQueue. new Node<>("Arabia");
+        testQueue.setHead(replacementHead);
+        assertNotEquals(oldHead, replacementHead); //Assert head node is no longer same
+        assertEquals("Arabia", testQueue.getHead().data); //Assert data is updated
+    }
 }
