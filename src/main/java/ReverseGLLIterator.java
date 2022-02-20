@@ -9,17 +9,44 @@ is called in the GenericList class.
 */
 //TODO: student headers for these files
 public class ReverseGLLIterator<E> implements Iterator<E> {
+    GenericList<E>.Node<E> curNode; //copy of original list, will be destroyed to make reversedList
+    GenericStack<E> reversedList = null; //Using a stack we ensure it is reversed as its built
+
+    //Constructor
+    public ReverseGLLIterator(GenericList<E>.Node<E> givenHeadNode) {
+        //DONE:
+        //Save the given node in order to maintain the original in tact
+        curNode = givenHeadNode;
+        //send the given listen into a stack to reverse it
+        if (curNode != null) {
+            reversedList = new GenericStack<>(curNode.data);
+            curNode = curNode.next;
+            while (curNode != null) {
+                reversedList.push(curNode.data);
+                curNode = curNode.next;
+            }
+        }
+        //Set curNode to the new list's head to use in the methods below
+        curNode = reversedList.getHead();
+    }
 
     @Override
     public boolean hasNext() {
-        // TODO Auto-generated method stub
+        // DONE:
+        if (curNode != null)
+            return true;
         return false;
     }
 
     @Override
     public E next() {
-        // TODO Auto-generated method stub
-        return null;
+        // DONE:
+        //Save our data value to return
+        E ourData = curNode.data;
+        //Advance to next node
+        curNode = curNode.next;
+        //return our data value
+        return ourData;
     }
     
 }

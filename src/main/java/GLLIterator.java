@@ -22,7 +22,7 @@ public class GLLIterator<E> implements Iterator<E> {
     @Override
     public boolean hasNext() {
         // DONE:
-        if (curNode != null && curNode.next != null)
+        if (curNode != null)
             return true;
         return false;
     }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GLProject {
 
@@ -43,6 +44,20 @@ public class GLProject {
 		System.out.println(myQueue.get(3));
 		System.out.print("Printing myQueue index 0: ");
 		System.out.println(myQueue.get(0));
+
+		Iterator<Integer> queueIterator = myQueue.iterator();
+
+		System.out.println("Printing out queue of size " + myQueue.getLength() + " using iterator:");
+		while (queueIterator.hasNext()) {
+			System.out.println(queueIterator.next());
+		}
+
+		Iterator<Integer> queueRevIterator = myQueue.descendingIterator();
+
+		System.out.println("Printing out queue of size " + myQueue.getLength() + " using descendingIterator:");
+		while (queueRevIterator.hasNext()) {
+			System.out.println(queueRevIterator.next());
+		}
 
 
 	}

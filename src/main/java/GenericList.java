@@ -86,9 +86,10 @@ public abstract class GenericList<T> implements Iterable<T>{
         head = newHead;
     }
 
-    public GLLIterator<T> iterator() {
-        GLLIterator<T> newIterator = new GLLIterator<>(head);
-        return newIterator;
+    public Iterator<T> iterator() {
+        //DONE:
+        GLLIterator<T> newGLLIterator = new GLLIterator<>(head);
+        return newGLLIterator;
     }
 
     public ListIterator<T> listIterator(int index) {
@@ -100,13 +101,14 @@ public abstract class GenericList<T> implements Iterable<T>{
 
     public Iterator<T> descendingIterator() {
         //returns an iterator over the elements of the list in reverse order( tail to head)
-        //TODO:
-        return null;
+        //DONE:
+        ReverseGLLIterator<T> newReverseGLLIterator = new ReverseGLLIterator<>(head);
+        return newReverseGLLIterator;
     }
 
     public class Node<T2> {
         public T2 data;
-        public Node<T2> next;
+        public Node<T2> next = null;
 
         public Node(T2 val) {
             this.data = val;
