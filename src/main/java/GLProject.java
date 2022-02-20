@@ -59,6 +59,13 @@ public class GLProject {
 			System.out.println(queueRevIterator.next());
 		}
 
+		Iterator<Integer> queueListIterator = myQueue.listIterator(3);
+
+		System.out.println("Printing out queue starting from index 3 using listIterator: ");
+		while (queueListIterator.hasNext()) {
+			System.out.println(queueListIterator.next());
+		}
+
 
 	}
 }

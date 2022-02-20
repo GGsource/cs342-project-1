@@ -9,7 +9,7 @@ public abstract class GenericList<T> implements Iterable<T>{
     public void print() {
         //Prints the items in the list, one value per line.
         //If the list is empty, print "Empty list".
-        //FIXME: Use Iterator for traversal
+        //DONE:
         Node<T> traverser = head;
         System.out.println("Printing List of size " + length + ":");
         while (traverser != null) {
@@ -51,7 +51,7 @@ public abstract class GenericList<T> implements Iterable<T>{
     public T get(int index) {
         //returns the value at the specified index
         //or null if the index is out of bounds.
-        //FIXME: Use Iterator for traversal
+        //DONE:
         Node<T> traverserNode = head;
         int curNdx = 0;
         while (curNdx != index && traverserNode != null) {
@@ -68,7 +68,7 @@ public abstract class GenericList<T> implements Iterable<T>{
         //replace the element at specified position in the list with the specified
         //element and return the element previously at the specified position.
         //Return null if index is out of bounds
-        //TODO: Use Iterator for traversal
+        //DONE:
 
         return null;
     }
@@ -95,8 +95,9 @@ public abstract class GenericList<T> implements Iterable<T>{
     public ListIterator<T> listIterator(int index) {
         //returns a list-iterator of the elements of this
         //list starting at the specified position.
-        //TODO:
-        return null;
+        //DONE:
+        GLListIterator<T> newGLListIterator = new GLListIterator<>(index, head);
+        return newGLListIterator;
     }
 
     public Iterator<T> descendingIterator() {
