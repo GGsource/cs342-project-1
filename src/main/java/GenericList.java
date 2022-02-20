@@ -86,6 +86,11 @@ public abstract class GenericList<T> implements Iterable<T>{
         head = newHead;
     }
 
+    public GLLIterator<T> iterator() {
+        GLLIterator<T> newIterator = new GLLIterator<>(head);
+        return newIterator;
+    }
+
     public ListIterator<T> listIterator(int index) {
         //returns a list-iterator of the elements of this
         //list starting at the specified position.
@@ -106,10 +111,5 @@ public abstract class GenericList<T> implements Iterable<T>{
         public Node(T2 val) {
             this.data = val;
         }
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return null;
     }
 }
