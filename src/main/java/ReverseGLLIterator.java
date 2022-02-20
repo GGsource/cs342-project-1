@@ -7,7 +7,7 @@ methods will have logic to iterate from the list in reverse (tail to head).
 This is the class that will be returned when the descendingIterator() method
 is called in the GenericList class.
 */
-//TODO: student headers for these files
+//FIXME: student headers for these files
 public class ReverseGLLIterator<E> implements Iterator<E> {
     GenericList<E>.Node<E> curNode; //copy of original list, will be destroyed to make reversedList
     GenericStack<E> reversedList = null; //Using a stack we ensure it is reversed as its built

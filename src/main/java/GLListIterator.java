@@ -5,23 +5,19 @@ public class GLListIterator<E> implements ListIterator<E> {
     int curNdx = 0;
 
     private class DoublyLinkedList<F> {
-        DLNode<F> dHead = null;
-        DLNode<F> dTail = null;
+        private DLNode<F> dHead = null;
 
         private DoublyLinkedList(GenericList<F>.Node<F> originalHead) {
-            int traversingNdx = 0;
+            //FIXME: comment this miss
             dHead = new DLNode<>(originalHead.data);
-            traversingNdx++;
             DLNode<F> dprevNode = dHead;
             GenericList<F>.Node<F> curTraverseNode = originalHead.next;
             while (curTraverseNode != null) {
                 dprevNode.next = new DLNode<>(curTraverseNode.data);
                 dprevNode.next.previous = dprevNode;
-                traversingNdx++;
                 curTraverseNode = curTraverseNode.next;
                 dprevNode = dprevNode.next;
             }
-            dTail = dprevNode;
             
         }
 
@@ -87,7 +83,7 @@ public class GLListIterator<E> implements ListIterator<E> {
         //Save our data value to return
         E ourData = curNode.data;
         //Advance to next node
-        curNode = curNode.next;
+        curNode = curNode.previous;
         //return our data value
         return ourData;
     }
