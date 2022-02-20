@@ -34,8 +34,6 @@ public class GenericQueue<T> extends GenericList<T> {
         Node<T> traversalNode = getHead();
         while (traversalNode.next != tail) {
             traversalNode = traversalNode.next;
-            //REMOVEME:
-            System.out.println("Traversin Queue..");
         }
         //traversalNode now points to 2nd to last node, so cut off the old tail
         traversalNode.next = null;
