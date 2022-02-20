@@ -9,7 +9,14 @@ public abstract class GenericList<T> implements Iterable<T>{
     public void print() {
         //Prints the items in the list, one value per line.
         //If the list is empty, print "Empty list".
-        //TODO:
+        //FIXME: Use Iterator for traversal
+        Node<T> traverser = head;
+        System.out.println("Printing List of size " + length + ":");
+        while (traverser != null) {
+            System.out.println(traverser.data);
+            traverser = traverser.next;
+        }
+        System.out.println("End of list!");
     }
     
     abstract void add(T data);
@@ -32,24 +39,36 @@ public abstract class GenericList<T> implements Iterable<T>{
         //this method stores and returns all values currently in the list
         // into an ArrayList and returns it. At the end of
         //this method your list should be empty.
-        //TODO:
-
-        return null;
+        //DONE:
+        ArrayList<T> returnArrayList = new ArrayList<>();
+        while (length > 0) {
+            returnArrayList.add(delete());
+        }
+        //returnArrayList should nown be full, and our GenericList should be empty
+        return returnArrayList;
     }
 
     public T get(int index) {
         //returns the value at the specified index
         //or null if the index is out of bounds.
-        //TODO:
-
-        return null;
+        //FIXME: Use Iterator for traversal
+        Node<T> traverserNode = head;
+        int curNdx = 0;
+        while (curNdx != index && traverserNode != null) {
+            traverserNode = traverserNode.next;
+            curNdx++;
+        }
+        //We should now be at the correct node, or at null
+        if (traverserNode == null)
+            return null;
+        return traverserNode.data;
     }
 
     public T set(int index, T element) {
-        //replace the element at specified position in the list with the specified element
-        //and return the element previously at the specified position.
+        //replace the element at specified position in the list with the specified
+        //element and return the element previously at the specified position.
         //Return null if index is out of bounds
-        //TODO:
+        //TODO: Use Iterator for traversal
 
         return null;
     }
@@ -68,7 +87,8 @@ public abstract class GenericList<T> implements Iterable<T>{
     }
 
     public ListIterator<T> listIterator(int index) {
-        //returns a list-iterator of the elements of this list starting at the specified position.
+        //returns a list-iterator of the elements of this
+        //list starting at the specified position.
         //TODO:
         return null;
     }
